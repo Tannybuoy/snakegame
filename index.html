@@ -130,6 +130,14 @@
             gap: 2px;
         }
 
+        .nav-btn:active {
+            transform: translateY(2px);
+            box-shadow: 
+                0 1px 3px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.2),
+                inset 0 -1px 2px rgba(0,0,0,0.4);
+        }
+
         .nav-btn {
             width: 35px;
             height: 35px;
@@ -141,6 +149,7 @@
                 inset 0 -2px 3px rgba(0,0,0,0.3);
             position: relative;
             cursor: pointer;
+            user-select: none;
         }
 
         .nav-btn::after {
@@ -340,13 +349,13 @@
         <!-- Navigation buttons -->
         <div class="nav-section">
             <div class="nav-buttons">
-                <div class="nav-btn nav-up"></div>
+                <div class="nav-btn nav-up" onclick="setDirection('up')"></div>
                 <div class="nav-center">
-                    <div class="nav-btn nav-left"></div>
+                    <div class="nav-btn nav-left" onclick="setDirection('left')"></div>
                     <div class="nav-btn-center"></div>
-                    <div class="nav-btn nav-right"></div>
+                    <div class="nav-btn nav-right" onclick="setDirection('right')"></div>
                 </div>
-                <div class="nav-btn nav-down"></div>
+                <div class="nav-btn nav-down" onclick="setDirection('down')"></div>
             </div>
             <div class="side-buttons">
                 <div class="side-btn left-side"></div>
@@ -534,6 +543,24 @@
                     break;
             }
         });
+
+        // Handle button clicks for navigation
+        function setDirection(dir) {
+            switch(dir) {
+                case 'up':
+                    if (direction.y === 0) nextDirection = {x: 0, y: -1};
+                    break;
+                case 'down':
+                    if (direction.y === 0) nextDirection = {x: 0, y: 1};
+                    break;
+                case 'left':
+                    if (direction.x === 0) nextDirection = {x: -1, y: 0};
+                    break;
+                case 'right':
+                    if (direction.x === 0) nextDirection = {x: 1, y: 0};
+                    break;
+            }
+        }
 
         // End game
         function endGame() {
