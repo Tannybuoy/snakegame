@@ -113,6 +113,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 15px;
             margin: 25px 0;
         }
 
@@ -200,6 +201,22 @@
                 0 4px 8px rgba(0,0,0,0.4),
                 inset 0 1px 0 rgba(255,255,255,0.4),
                 inset 0 -3px 5px rgba(0,0,0,0.3);
+        }
+
+        .side-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .side-btn {
+            width: 30px;
+            height: 25px;
+            background: linear-gradient(135deg, #8a9aad 0%, #7a8a9d 100%);
+            border-radius: 12px;
+            box-shadow: 
+                0 2px 4px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.3);
         }
 
         .keypad {
@@ -339,6 +356,10 @@
                     <div class="nav-btn nav-right" onclick="setDirection('right')"></div>
                 </div>
                 <div class="nav-btn nav-down" onclick="setDirection('down')"></div>
+            </div>
+            <div class="side-buttons">
+                <div class="side-btn left-side"></div>
+                <div class="side-btn right-side"></div>
             </div>
         </div>
         
