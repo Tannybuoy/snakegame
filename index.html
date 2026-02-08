@@ -16,29 +16,40 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #3a3a3a;
+            background: #000000;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
+            overflow: hidden;
+        }
+
+        #matrixBg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
         }
 
         .phone-body {
             width: 340px;
-            background: linear-gradient(135deg, #5a6b7d 0%, #4a5b6d 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
             border-radius: 30px 30px 40px 40px;
             padding: 20px;
-            box-shadow: 
-                0 20px 60px rgba(0,0,0,0.6),
-                inset 0 1px 0 rgba(255,255,255,0.2),
-                inset 0 -5px 20px rgba(0,0,0,0.3);
+            box-shadow:
+                0 20px 60px rgba(0,255,65,0.15),
+                inset 0 1px 0 rgba(0,255,65,0.1),
+                inset 0 -5px 20px rgba(0,0,0,0.5);
             position: relative;
-            border: 3px solid #8a9aad;
+            border: 2px solid #00ff41;
+            z-index: 1;
         }
 
         .speaker {
             width: 80px;
             height: 6px;
-            background: linear-gradient(to bottom, #1a1a1a, #2a2a2a);
+            background: linear-gradient(to bottom, #0a0a0a, #111);
             margin: 0 auto 15px;
             border-radius: 3px;
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.8);
@@ -52,8 +63,8 @@
             height: 2px;
             background: repeating-linear-gradient(
                 90deg,
-                #0a0a0a 0px,
-                #0a0a0a 4px,
+                #003300 0px,
+                #003300 4px,
                 transparent 4px,
                 transparent 8px
             );
@@ -63,27 +74,27 @@
 
         .nokia-logo {
             text-align: center;
-            color: #e8e8e8;
+            color: #00ff41;
             font-weight: bold;
             font-size: 18px;
             letter-spacing: 3px;
             margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 0 10px rgba(0,255,65,0.8);
         }
 
         .screen-bezel {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #0a0a0a 0%, #050505 100%);
             padding: 12px;
             border-radius: 8px;
-            box-shadow: 
+            box-shadow:
                 inset 0 2px 8px rgba(0,0,0,0.8),
-                0 2px 4px rgba(255,255,255,0.1);
+                0 0 8px rgba(0,255,65,0.2);
             margin-bottom: 20px;
         }
 
         .screen {
-            background: #c7d23c;
-            border: 2px solid #0a0a0a;
+            background: #000000;
+            border: 2px solid #00ff41;
             padding: 8px;
             border-radius: 3px;
         }
@@ -94,15 +105,16 @@
             margin-bottom: 4px;
             font-size: 11px;
             font-weight: bold;
-            color: #0a0a0a;
-            background: #c7d23c;
+            color: #00ff41;
+            background: #000000;
             padding: 2px 4px;
             font-family: 'Courier New', monospace;
+            text-shadow: 0 0 5px rgba(0,255,65,0.5);
         }
 
         canvas {
             display: block;
-            background: #c7d23c;
+            background: #000000;
             image-rendering: pixelated;
             image-rendering: crisp-edges;
             width: 100%;
@@ -131,24 +143,25 @@
 
         .nav-btn:active {
             transform: translateY(2px);
-            box-shadow: 
+            box-shadow:
                 0 1px 3px rgba(0,0,0,0.4),
-                inset 0 1px 0 rgba(255,255,255,0.2),
+                inset 0 1px 0 rgba(0,255,65,0.1),
                 inset 0 -1px 2px rgba(0,0,0,0.4);
         }
 
         .nav-btn {
             width: 52px;
             height: 52px;
-            background: linear-gradient(135deg, #7a8a9d 0%, #6a7a8d 100%);
+            background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%);
             border-radius: 10px;
-            box-shadow: 
-                0 4px 8px rgba(0,0,0,0.4),
-                inset 0 1px 0 rgba(255,255,255,0.3),
-                inset 0 -3px 4px rgba(0,0,0,0.3);
+            box-shadow:
+                0 4px 8px rgba(0,0,0,0.6),
+                inset 0 1px 0 rgba(0,255,65,0.15),
+                inset 0 -3px 4px rgba(0,0,0,0.4);
             position: relative;
             cursor: pointer;
             user-select: none;
+            border: 1px solid rgba(0,255,65,0.3);
         }
 
         .nav-btn::after {
@@ -164,7 +177,7 @@
             height: 0;
             border-left: 9px solid transparent;
             border-right: 9px solid transparent;
-            border-bottom: 12px solid #4a5a6d;
+            border-bottom: 12px solid #00ff41;
         }
 
         .nav-down::after {
@@ -172,7 +185,7 @@
             height: 0;
             border-left: 9px solid transparent;
             border-right: 9px solid transparent;
-            border-top: 12px solid #4a5a6d;
+            border-top: 12px solid #00ff41;
         }
 
         .nav-left::after {
@@ -180,7 +193,7 @@
             height: 0;
             border-top: 9px solid transparent;
             border-bottom: 9px solid transparent;
-            border-right: 12px solid #4a5a6d;
+            border-right: 12px solid #00ff41;
         }
 
         .nav-right::after {
@@ -188,18 +201,19 @@
             height: 0;
             border-top: 9px solid transparent;
             border-bottom: 9px solid transparent;
-            border-left: 12px solid #4a5a6d;
+            border-left: 12px solid #00ff41;
         }
 
         .nav-btn-center {
             width: 52px;
             height: 52px;
-            background: linear-gradient(135deg, #5a9abd 0%, #4a8aad 100%);
+            background: linear-gradient(135deg, #0a3a0a 0%, #052005 100%);
             border-radius: 50%;
-            box-shadow: 
+            box-shadow:
                 0 4px 8px rgba(0,0,0,0.4),
-                inset 0 1px 0 rgba(255,255,255,0.4),
+                inset 0 1px 0 rgba(0,255,65,0.2),
                 inset 0 -3px 5px rgba(0,0,0,0.3);
+            border: 1px solid rgba(0,255,65,0.3);
         }
 
         .keypad {
@@ -218,46 +232,47 @@
         .key {
             width: 80px;
             height: 45px;
-            background: linear-gradient(135deg, #8a9aad 0%, #7a8a9d 100%);
+            background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%);
             border-radius: 20px;
-            box-shadow: 
-                0 4px 8px rgba(0,0,0,0.4),
-                inset 0 1px 0 rgba(255,255,255,0.3),
-                inset 0 -3px 5px rgba(0,0,0,0.3);
+            box-shadow:
+                0 4px 8px rgba(0,0,0,0.6),
+                inset 0 1px 0 rgba(0,255,65,0.1),
+                inset 0 -3px 5px rgba(0,0,0,0.4);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             position: relative;
+            border: 1px solid rgba(0,255,65,0.2);
         }
 
         .key:active {
             transform: translateY(1px);
-            box-shadow: 
+            box-shadow:
                 0 2px 4px rgba(0,0,0,0.4),
-                inset 0 1px 0 rgba(255,255,255,0.3),
+                inset 0 1px 0 rgba(0,255,65,0.1),
                 inset 0 -1px 3px rgba(0,0,0,0.3);
         }
 
         .key .num {
             font-size: 18px;
             font-weight: bold;
-            color: #2a2a2a;
-            text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+            color: #00ff41;
+            text-shadow: 0 0 5px rgba(0,255,65,0.5);
         }
 
         .key .txt {
             font-size: 9px;
-            color: #8fd369;
+            color: #00cc33;
             font-weight: bold;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 0 0 3px rgba(0,255,65,0.3);
         }
 
         .instructions {
             text-align: center;
             font-size: 10px;
-            color: rgba(255,255,255,0.6);
+            color: rgba(0,255,65,0.5);
             margin-top: 10px;
         }
 
@@ -266,19 +281,21 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(10,10,10,0.95);
-            color: #c7d23c;
+            background: rgba(0,0,0,0.95);
+            color: #00ff41;
             padding: 20px;
             border-radius: 8px;
             text-align: center;
             display: none;
-            border: 2px solid #c7d23c;
+            border: 2px solid #00ff41;
             z-index: 10;
+            box-shadow: 0 0 20px rgba(0,255,65,0.3);
         }
 
         .game-over h2 {
             margin-bottom: 10px;
             font-size: 18px;
+            text-shadow: 0 0 10px rgba(0,255,65,0.8);
         }
 
         .game-over p {
@@ -287,8 +304,8 @@
         }
 
         .game-over button {
-            background: #c7d23c;
-            color: #0a0a0a;
+            background: #00ff41;
+            color: #000000;
             border: none;
             padding: 8px 20px;
             font-size: 12px;
@@ -299,11 +316,13 @@
         }
 
         .game-over button:hover {
-            background: #d4df4a;
+            background: #33ff66;
+            box-shadow: 0 0 10px rgba(0,255,65,0.5);
         }
     </style>
 </head>
 <body>
+    <canvas id="matrixBg"></canvas>
     <div class="phone-body">
         <!-- Speaker holes -->
         <div class="speaker"></div>
@@ -406,12 +425,12 @@
 
         // Draw the game
         function draw() {
-            // Clear canvas with Nokia yellow-green
-            ctx.fillStyle = '#c7d23c';
+            // Clear canvas with black
+            ctx.fillStyle = '#000000';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Draw grid (subtle darker lines)
-            ctx.strokeStyle = '#a8b531';
+            // Draw grid (subtle dark green lines)
+            ctx.strokeStyle = 'rgba(0, 255, 65, 0.1)';
             ctx.lineWidth = 0.5;
             for (let i = 0; i <= GRID_SIZE; i++) {
                 ctx.beginPath();
@@ -424,10 +443,14 @@
                 ctx.stroke();
             }
 
-            // Draw snake in black
-            ctx.fillStyle = '#0a0a0a';
+            // Draw snake in Matrix green with glow
             snake.forEach((segment, index) => {
                 const padding = 1;
+                const brightness = 1 - (index / snake.length) * 0.5;
+                const g = Math.floor(255 * brightness);
+                ctx.fillStyle = `rgb(0, ${g}, ${Math.floor(65 * brightness)})`;
+                ctx.shadowColor = '#00ff41';
+                ctx.shadowBlur = index === 0 ? 8 : 3;
                 ctx.fillRect(
                     segment.x * CELL_SIZE + padding,
                     segment.y * CELL_SIZE + padding,
@@ -435,9 +458,12 @@
                     CELL_SIZE - padding * 2
                 );
             });
+            ctx.shadowBlur = 0;
 
-            // Draw food in black
-            ctx.fillStyle = '#0a0a0a';
+            // Draw food in bright green with glow
+            ctx.fillStyle = '#00ff41';
+            ctx.shadowColor = '#00ff41';
+            ctx.shadowBlur = 10;
             ctx.beginPath();
             ctx.arc(
                 food.x * CELL_SIZE + CELL_SIZE / 2,
@@ -447,6 +473,7 @@
                 Math.PI * 2
             );
             ctx.fill();
+            ctx.shadowBlur = 0;
         }
 
         // Update game state
@@ -568,6 +595,55 @@
         // Start game
         gameLoop = setInterval(gameStep, gameSpeed);
         draw();
+
+        // Matrix rain background
+        (function() {
+            const bgCanvas = document.getElementById('matrixBg');
+            const bgCtx = bgCanvas.getContext('2d');
+
+            function resizeBg() {
+                bgCanvas.width = window.innerWidth;
+                bgCanvas.height = window.innerHeight;
+            }
+            resizeBg();
+            window.addEventListener('resize', resizeBg);
+
+            const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const fontSize = 14;
+            let columns = Math.floor(bgCanvas.width / fontSize);
+            let drops = Array(columns).fill(1);
+
+            window.addEventListener('resize', () => {
+                columns = Math.floor(bgCanvas.width / fontSize);
+                drops = Array(columns).fill(1);
+            });
+
+            function drawMatrix() {
+                bgCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+                bgCtx.fillStyle = '#00ff41';
+                bgCtx.font = fontSize + 'px monospace';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const char = chars[Math.floor(Math.random() * chars.length)];
+                    const x = i * fontSize;
+                    const y = drops[i] * fontSize;
+
+                    // Vary brightness
+                    const alpha = 0.3 + Math.random() * 0.7;
+                    bgCtx.fillStyle = `rgba(0, 255, 65, ${alpha})`;
+                    bgCtx.fillText(char, x, y);
+
+                    if (y > bgCanvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            setInterval(drawMatrix, 50);
+        })();
     </script>
 </body>
 </html>
